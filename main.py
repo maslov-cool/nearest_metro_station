@@ -2,7 +2,7 @@ import requests
 
 server_address = 'http://geocode-maps.yandex.ru/1.x/?'
 api_key = '8013b162-6b42-4997-9691-77b7074026e0'
-geocode = input()
+geocode = input("Введите адрес: ")
 # Готовим запрос.
 geocoder_request = f'{server_address}apikey={api_key}&geocode={geocode}&format=json'
 
@@ -49,5 +49,5 @@ else:
     print("Ошибка выполнения запроса:")
     print(geocoder_request)
     print("Http статус:", response.status_code, "(", response.reason, ")")
-print(min(A, key=lambda x: x[1])[0])
+print(f"Ближайшая станция метро: {min(A, key=lambda x: x[1])[0]}")
 
